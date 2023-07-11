@@ -1,0 +1,28 @@
+[
+    {"idx":1, "titulo":"ZAPATILLAS BEAT", "descripcion":"Un calzado cómodo y con estilo para sentir confort a cada paso.",
+     "imagen":"https://topperarg.vtexassets.com/arquivos/ids/260696-800-800?width=800&height=800&aspect=true", "precio":12928, "categoria":"hombre", "stock":10},
+
+     {"idx":2, "titulo":"ZAPATILLAS VR SPEED", "descripcion":"Comienza una nueva era en el running de velocidad. ",
+     "imagen":"https://topperarg.vtexassets.com/arquivos/ids/280563-800-800?width=800&height=800&aspect=true", "precio":15852, "categoria":"hombre", "stock":9},
+
+     {"idx":3, "titulo":"ZAPATILLAS FAST", "descripcion":"Un nuevo básico para todos los días que combina con cualquier look",
+     "imagen":"https://topperarg.vtexassets.com/arquivos/ids/247889-800-800?width=800&height=800&aspect=true", "precio":17750, "categoria":"hombre", "stock":8},
+
+     {"idx":4, "titulo":"ZAPATILLAS LISS", "descripcion":"El nuevo LISS es un concepto femenino muy liviano y respirable con materiales y líneas únicas.",
+     "imagen":"https://topperarg.vtexassets.com/arquivos/ids/277580-800-800?width=800&height=800&aspect=true", "precio":14768, "categoria":"mujer", "stock":7},
+
+     {"idx":5, "titulo":"ZAPATILLAS CIRCUS", "descripcion":"Un calzado de running que, con un diseño que combina distintos materiales y colores",
+     "imagen":"https://topperarg.vtexassets.com/arquivos/ids/283023-800-800?width=800&height=800&aspect=true", "precio":20980, "categoria":"mujer", "stock":6},
+
+     {"idx":6, "titulo":"ZAPATILLAS MAMBA", "descripcion":"El modelo Mamba se suma a la familia del training, para un look super cómodo y moderno.",
+     "imagen":"https://topperarg.vtexassets.com/arquivos/ids/284304-800-800?width=800&height=800&aspect=true", "precio":13808, "categoria":"mujer", "stock":5},
+
+     {"idx":7, "titulo":"ZAPATILLAS CHALPA BEBE", "descripcion":"Con inspiración Outdoor, este diseño mezcla perfectamente las líneas y materiales de una zapa cool",
+     "imagen":"https://topperarg.vtexassets.com/arquivos/ids/284050-800-800?width=800&height=800&aspect=true", "precio":10400, "categoria":"nino", "stock":4},
+
+     {"idx":8, "titulo":"ZAPATILLAS PROFESIONAL BEBE", "descripcion":"Un clásico de Topper en su versión para los más pequeños",
+     "imagen":"https://topperarg.vtexassets.com/arquivos/ids/274773-800-800?width=800&height=800&aspect=true", "precio":7400, "categoria":"nino", "stock":3},
+
+     {"idx":9, "titulo":"VELCRO BEBE", "descripcion":"Vuleve un clasico de la marca! Este modelo, ahora renovado, se reincorpora al mundo de los mas chicos.",
+     "imagen":"https://topperarg.vtexassets.com/arquivos/ids/283979-800-800?width=800&height=800&aspect=true", "precio":10370, "categoria":"nino", "stock":2}
+]
