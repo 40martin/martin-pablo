@@ -3,10 +3,7 @@ import { useEffect, useState } from "react";
 import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-
-
-
+import { getFirestore, collection, getDocs, } from "firebase/firestore";
 
 
 const ItemListContainer = () => {
@@ -27,14 +24,22 @@ const ItemListContainer = () => {
         });
     }, [id]); */
 
-    useEffect(() => {
+   useEffect(() => {
         const db = getFirestore();
-        const itemsCollection = collection(db, "items");
+        const itemsCollection = collection(db, "martin");
         getDocs(itemsCollection).then(resultado => {
             setItems(resultado.docs.map(producto => ({id:producto.id, ...producto.data()})));
         });
-    }, [id]); 
-    
+    }, [id]);
+
+  /*   useEffect(() => {
+        const db = getFirestore();
+        const itemsCollection = collection(db, "martin");
+        
+        productos.forEach(producto => {
+            addDoc(itemsCollection, producto);
+        });
+    }, []); */
     
     return (
         <div className="container my-3">

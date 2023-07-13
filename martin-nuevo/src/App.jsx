@@ -9,6 +9,7 @@ import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 import Error404 from './components/Error404';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Cart from './components/Cart';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <CartWidget />
         <Routes>
         <Route path={"/"} element={<Fotos />} />
+        <Route path={"/cart"} element={<Cart />} />
         <Route path={"/category/:id"} element={<Fotos2 />} />
         <Route path={"/*"} element={<Error404 />} />   
         </Routes>
