@@ -3,6 +3,7 @@ import { useState } from "react";
 import productos from "./json/productos.json";
 import ItemDetail from "./ItemDetail";
 
+
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
 
@@ -19,7 +20,6 @@ const ItemDetailContainer = () => {
         });
     }, []);
 
-    
     return (
         <>
             <ItemDetail producto={item} />

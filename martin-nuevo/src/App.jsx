@@ -10,26 +10,28 @@ import NavBar from './components/NavBar';
 import Error404 from './components/Error404';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from './components/Cart';
+import CartContextProvider from './components/CartContext';
 
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-      
-        <Header />
-        <NavBar />
-        <CartWidget />
-        <Routes>
-        <Route path={"/"} element={<Fotos />} />
-        <Route path={"/cart"} element={<Cart />} />
-        <Route path={"/category/:id"} element={<Fotos2 />} />
-        <Route path={"/*"} element={<Error404 />} />   
-        </Routes>
-        <ItemListContainer />
-        <ItemDetailContainer />
-        <Footer />
-      </BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter>
+          <Header />
+          <NavBar />
+          <CartWidget />
+          <Routes>
+          <Route path={"/"} element={<Fotos />} />
+          <Route path={"/cart"} element={<Cart />} />
+          <Route path={"/category/:id"} element={<Fotos2 />} />
+          <Route path={"/*"} element={<Error404 />} />   
+          </Routes>
+          <ItemListContainer />
+          <ItemDetailContainer />
+          <Footer />
+        </BrowserRouter>
+      </CartContextProvider>
       
     </div>
   );
