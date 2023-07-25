@@ -1,27 +1,46 @@
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
+import { getFirestore, addDoc } from "firebase/firestore";
 
 const Checkout = () => {
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
-    const [order, setOrder] = useState("");
+    const [orderId, setOrderId] = useState("");
     const [telefono, setTelefono] = useState("");
     const {cart, sumTotal} = useContext(CartContext);
+    
 
     const generarOrden = () => {
+        if (nombre.length === 0) {	
+            return false;
+        }
+
+        if (email.length === 0) {	
+            return false;
+        }
+
+        if (telefono.length === 0) {	
+            return false;
+        }
+
         const buyer = {nombre, email, telefono};
         const items = cart.map(item => ({id: item.id, title: item.titulo, price: item.precio, quantity: item.cantidad}));
         const fecha = new Date();
-        const date = `${fecha.getDate()}-${fecha.getMonth()+1}-${fecha.getFullYear} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.
-        getSeconds()}}`;
+        const date = `${fecha.getDate()}-${fecha.getMonth()+1}-${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}`;
         const total = sumTotal();
         const Order = {buyer, items, date, total};
 
-    }    
-
-    
-    
+        const db = getFirestore();
+        const OrdersCollection = db.collection("orders");
+        addDoc(OrdersCollection, Order).then(resultado => {
+            setOrderId(resultado.id)
+        })
+        .catch(resultado => {
+            console.log("ERROR SU COMPRA NO PUDO SER PROCESADA");
+        });
+        
+    }
     
     return (
         <div className="container my-5">
@@ -43,8 +62,16 @@ const Checkout = () => {
                         <button type="button" className="btn btn-primary" onClick={generarOrden}>Generar Orden</button>
                     </form>
                 </div>
-            </div>   
-        </div>         
+            </div>
+            <div className="row">
+                <div className="col text-center">
+                    {orderId ? <div className="alert alert-warning" role="alert">
+                        <h1>GRACIAS POR SU COMPRA</h1>
+                        <p>SU ORDEN DE COMPRA ES: <b>{orderId}</b></p>
+                    </div> : ""}
+                </div> 
+            </div>         
+        </div>
     )
 }
 
