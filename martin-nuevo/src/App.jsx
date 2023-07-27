@@ -12,6 +12,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from './components/Cart';
 import CartContextProvider from './components/CartContext';
 import Checkout from './components/Checkout';
+import Gracias from './components/Gracias';
+
+
 
 
 function App() {
@@ -27,7 +30,8 @@ function App() {
           <Route path={"/cart"} element={<Cart />} />
           <Route path={"/category/:id"} element={<Fotos2 />} />
           <Route path={"/*"} element={<Error404 />} />
-          <Route path={"/checkout"} element={<Checkout />} />   
+          <Route path={"/gracias/:orderId"} element={<Gracias />} />
+          <Route path={"/checkout"} element={<Checkout />} />  
           </Routes>
           <ItemListContainer />
           <ItemDetailContainer />

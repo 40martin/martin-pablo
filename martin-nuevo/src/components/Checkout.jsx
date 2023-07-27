@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { getFirestore, addDoc } from "firebase/firestore";
+import { Navigate } from "react-router-dom";
 
 const Checkout = () => {
     const [nombre, setNombre] = useState("");
@@ -65,13 +66,10 @@ const Checkout = () => {
             </div>
             <div className="row">
                 <div className="col text-center">
-                    {orderId ? <div className="alert alert-warning" role="alert">
-                        <h1>GRACIAS POR SU COMPRA</h1>
-                        <p>SU ORDEN DE COMPRA ES: <b>{orderId}</b></p>
-                    </div> : ""}
-                </div> 
-            </div>         
-        </div>
+                    {orderId ? <Navigate to={"/gracias/" + orderId} /> : ""}
+                </div>
+            </div> 
+        </div>         
     )
 }
 
