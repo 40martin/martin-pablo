@@ -9,7 +9,7 @@ const Checkout = () => {
     const [email, setEmail] = useState("");
     const [orderId, setOrderId] = useState("");
     const [telefono, setTelefono] = useState("");
-    const {cart, sumTotal} = useContext(CartContext);
+    const {cart, clear, sumTotal} = useContext(CartContext);
     
 
     const generarOrden = () => {
@@ -35,6 +35,7 @@ const Checkout = () => {
         const db = getFirestore();
         const OrdersCollection = db.collection("orders");
         addDoc(OrdersCollection, Order).then(resultado => {
+            clear();
             setOrderId(resultado.id)
         })
         .catch(resultado => {
